@@ -1,0 +1,27 @@
+<%- include('./components/header') %> 
+    <!-- 页面主体 -->
+
+    <div class="container">
+        <!-- 每篇文章一个行row -->
+        <% if (posts.length !== 0) { %>
+
+            <% posts.forEach(element => { %>
+                <%- include('./components/post-content', {post: element}) %>
+            <% }) %>
+
+        <% } else { %>
+        
+        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+            <div class="panel panel-default">
+                <div class="panel-body text-center">
+                    空空如也
+                </div>
+            </div>
+        </div>
+
+        <% } %>
+        
+    
+    </div>
+
+<%- include('./components/footer') %> 
